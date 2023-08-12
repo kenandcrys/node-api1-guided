@@ -33,7 +33,7 @@ module.exports = {
     const dog = dogs.find(dog => dog.id == id)
     if (!dog) return null
 
-    const updatedDog = { ...changes, id }
+    const updatedDog = { id: Number(id), ...changes }
     dogs = dogs.map(d => (d.id == id) ? updatedDog : d)
     return updatedDog
   },
